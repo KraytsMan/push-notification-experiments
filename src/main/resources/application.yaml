@@ -1,0 +1,21 @@
+
+spring:
+  application:
+    name: skeleton
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/firebase?useSSL=false&useUnicode=true&characterEncoding=UTF-8&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: firebase
+    password: 1111
+    max-active: 20
+    test-while-idle: true
+    time-between-eviction-runs-millis: 7200000
+    validation-query: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+  flyway:
+    baseline-on-migrate: true

@@ -1,0 +1,15 @@
+CREATE TABLE users (
+  id           VARCHAR(255) NOT NULL PRIMARY KEY,
+  login        VARCHAR(255) NOT NULL,
+  is_admin     BIT(1)       NOT NULL  DEFAULT 0,
+  company_name VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE tokens (
+  id      VARCHAR(255) NOT NULL PRIMARY KEY,
+  token   VARCHAR(255) NOT NULL UNIQUE,
+  user_id VARCHAR(244) NOT NULL
+);
+
+ALTER TABLE tokens
+  ADD CONSTRAINT FK_TOKENS_USERS FOREIGN KEY (user_id) REFERENCES users (id);
